@@ -4,16 +4,17 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rel: <http://www.perceive.net/schemas/relationship/> .
 @prefix uni: <https://schema.org/CollegeOrUniversity> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-
-<#rowenaravenclaw>
-    a foaf:Person ;
-    foaf:name "R Ravenclaw" .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix class: <https://schema.org/CourseInstance> .
+# TODO student, teacher, rooms
 
 # TODO Problem: contrains
 <#wizard>
     a foaf:Person ;
 
+<#rowenaravenclaw>
+    a <#wizard> ;
+    foaf:name "Rowena Ravenclaw" .
 
 <#hogwarts>
     a uni:EducationalOrganization ;
@@ -32,6 +33,17 @@
     # uni:subOrganization <#ravenclaw> ;
     # uni:subOrganization <#ravenclaw> ;
     # uni:subOrganization <#ravenclaw> ;
+    # TODO create person/wizard
+    uni:owns "Dumbledore" 
+    uni:employee "Dumbledore"
+    uni:employee <#flitwick> . 
+
+# TODO employedBy
+<#flitwick>
+    a <#wizard> ;
+    uni:owns <#ravenclaw> ;
+    uni:memberOf <#ravenclaw> ;
+    uni:knowsAbout "History of Magic" .
 
 # TODO head of house difficult to map
 <#ravenclaw>
@@ -39,7 +51,8 @@
     a uni:subOrganization ;
     uni:slogan "" ;
     uni:founder <#rowenaravenclaw> ;
-    uni:owns "Head teacher"
+    # TODO owned by
+    # uni:HFHLKJH <#flitwick> .
 
 <#hufflepuff>
 
