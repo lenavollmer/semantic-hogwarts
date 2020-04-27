@@ -1,27 +1,49 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix ex: <http://example.org/stuff/1.0/> .
-
-<http://www.w3.org/TR/rdf-syntax-grammar>
-  dc:title "RDF/XML Syntax Specification (Revised)" ;
-   ex:editor [
-     ex:fullname "Dave Beckett";
-     ex:homePage <http://purl.org/net/dajobe/>
-   ] .
-
-
-@base <http://example.org/> .
+@base <#uk.hogwarts> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rel: <http://www.perceive.net/schemas/relationship/> .
+@prefix uni: <https://schema.org/CollegeOrUniversity> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<#green-goblin>
-    rel:enemyOf <#spiderman> ;
-    a foaf:Person ;    # in the context of the Marvel universe
-    foaf:name "Green Goblin" .
-
-<#spiderman>
-    rel:enemyOf <#green-goblin> ;
+<#rowenaravenclaw>
     a foaf:Person ;
-    foaf:name "Spiderman", "Человек-паук"@ru .
+    foaf:name "R Ravenclaw" .
+
+# TODO Problem: contrains
+<#wizard>
+    a foaf:Person ;
+
+
+<#hogwarts>
+    a uni:EducationalOrganization ;
+    uni:name "Hogwarts" ;
+    uni:founder <#rowenaravenclaw> ;
+    # TODO other 3 founders
+    # uni:founder <#rowenaravenclaw> ;
+    # uni:founder <#rowenaravenclaw> ;
+    # uni:founder <#rowenaravenclaw> ;
+    uni:foundingDate "993" ;
+    uni:foundingLocation "UK" ;
+    # TODO double check format
+    uni:logo "https://vignette.wikia.nocookie.net/harrypotter/images/6/61/Hogwarts-Wappen_2.png/revision/latest/top-crop/width/220/height/220?cb=20131224202326&path-prefix=de" ;
+    uni:subOrganization <#ravenclaw> .
+    # TODO other 3 houses
+    # uni:subOrganization <#ravenclaw> ;
+    # uni:subOrganization <#ravenclaw> ;
+    # uni:subOrganization <#ravenclaw> ;
+
+# TODO head of house difficult to map
+<#ravenclaw>
+    uni:hasParentOrganization <#hogwarts> ;
+    a uni:subOrganization ;
+    uni:slogan "" ;
+    uni:founder <#rowenaravenclaw> ;
+    uni:owns "Head teacher"
+
+<#hufflepuff>
+
+<#slytherin>
+
+<#gryffindor>
+
