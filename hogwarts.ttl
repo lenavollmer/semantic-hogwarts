@@ -6,11 +6,31 @@
 @prefix uni: <https://schema.org/CollegeOrUniversity> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix class: <https://schema.org/CourseInstance> .
-# TODO student, teacher, rooms
+# TODO student, teacher
 
-# TODO Problem: contrains
+# TODO Problem: constrains
 <#wizard>
     a foaf:Person ;
+    # still at Hogwarts
+    # alive
+    # in a house
+    # first appearance
+    # gender
+
+# for wizards: hasFriend
+
+<#student>
+    a <#wizard> ;
+    # is in a house
+    # attends classes
+    # is in a year
+    # pets
+    # lineage
+
+
+<#teacher>
+    a <#wizard> ;
+    # teaches a class
 
 <#rowenaravenclaw>
     a <#wizard> ;
