@@ -31,7 +31,9 @@
 <#teacher>
     a <#wizard> ;
     # teaches a class
+    # employed by hogwarts
 
+# founders
 <#rowenaravenclaw>
     a <#wizard> ;
     foaf:name "Rowena Ravenclaw" .
@@ -58,6 +60,7 @@
     uni:employee "Dumbledore"
     uni:employee <#flitwick> . 
 
+# teacher
 # TODO employedBy
 <#flitwick>
     a <#wizard> ;
@@ -65,6 +68,7 @@
     uni:memberOf <#ravenclaw> ;
     uni:knowsAbout "History of Magic" .
 
+# houses
 # TODO head of house difficult to map
 <#ravenclaw>
     uni:hasParentOrganization <#hogwarts> ;
@@ -75,8 +79,19 @@
     # uni:HFHLKJH <#flitwick> .
 
 <#hufflepuff>
+    uni:hasParentOrganization <#hogwarts> ;
+    a uni:subOrganization ;
+    uni:slogan "" ;
 
 <#slytherin>
+    uni:hasParentOrganization <#hogwarts> ;
+    a uni:subOrganization ;
+    uni:slogan "" ;
 
 <#gryffindor>
+    uni:hasParentOrganization <#hogwarts> ;
+    a uni:subOrganization ;
+    uni:slogan "" ;
+
+# students
 
