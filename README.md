@@ -1,1 +1,1 @@
-# semantic-hogwarts
+# Semantic Hogwarts
