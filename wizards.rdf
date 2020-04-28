@@ -14,7 +14,7 @@
     <rdfs:subClassOf rdf:resource="#Wizard"/>
 </rdfs:Class>
 
-<rdf:Property rdf:ID="firstAppeared">
+<rdf:Property rdf:ID="firstAppearance">
     <rdfs:comment>First appearance in the books</rdfs:comment>
     <rdfs:domain rdf:resource="#Wizard"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>

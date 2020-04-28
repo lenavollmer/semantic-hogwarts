@@ -30,7 +30,7 @@
     a <wizards#Wizard> ;
     uni:owns <#Hogwarts> ;
     wizards:isInHouse <#Gryffindor> ;
-    wizards:firstAppeards "First Book";
+    wizards:firstAppearance "First Book";
     wizard:isAlive "No" .
 
 # Founders
@@ -44,7 +44,7 @@
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" ;
     houses:founder <#RowenaRavenclaw>;
-    houses:hastHeadTeacher: <#FiliusFlitwick>.
+    houses:hasHeadTeacher: <#FiliusFlitwick>.
 
 <#Hufflepuff>
     a <houses#HogwartsHouse>
@@ -66,14 +66,14 @@
     a <wizards#Teacher> ;
     uni:owns <#Ravenclaw> ;
     wizards:isInHouse <#Ravenclaw> ;
-    wizards:firstAppeards "First Book";
-    wizards:teaches <#HistroyOfMagic>;
+    wizards:firstAppearance "First Book";
+    wizards:teaches <#HistoryOfMagic>;
     wizard:isAlive "Yes" .
     # TODO Foaf:employee does not exist.
 
 #Courses
 
-<#HistroyOfMagic>
+<#HistoryOfMagic>
     a <#CourseInstance>
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" .
@@ -88,9 +88,9 @@
   foaf:gender "Female";
   foaf:knows <#HelenaRavenclaw>
   wizards:isInHouse <#Ravenclaw> ;
-  wizards:firstAppeards "Fifth Book";
+  wizards:firstAppearance "Fifth Book";
   wizard:isAlive "Yes"; 
-  wizard:hasFamiliar "Not known";
+  wizard:hasFamiliar "Unknown";
   wizard:bloodStatus "Pure-blood".
 
 <HelenaRavenclaw>
@@ -99,7 +99,7 @@
  foaf:gender "Female";
  foaf:knows <#LunaLovegood>
  wizards:isInHouse <#Ravenclaw> ;
- wizards:firstAppeards "Seventh Book";
+ wizards:firstAppearance "Seventh Book";
  wizard:isAlive "No"; 
- wizard:hasFamiliar "Not known";
+ wizard:hasFamiliar "Unknown";
  wizard:bloodStatus "Pure-blood".
