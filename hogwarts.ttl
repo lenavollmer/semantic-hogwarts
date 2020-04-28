@@ -36,7 +36,15 @@
 # Founders
 <#RowenaRavenclaw>
     a <#wizard> ;
-    foaf:name "Rowena Ravenclaw" .
+    foaf:name "Rowena Ravenclaw" 
+    foaf:gender "Female";
+    foaf:knows <#HelenaRavenclaw>
+    #other founders
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "First Game";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood or half-blood".
 
 # Houses
 <#Ravenclaw>
@@ -68,38 +76,98 @@
     wizards:isInHouse <#Ravenclaw> ;
     wizards:firstAppearance "First Book";
     wizards:teaches <#HistoryOfMagic>;
-    wizard:isAlive "Yes" .
+    wizard:isAlive "Yes";
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Half-blood".
     # TODO Foaf:employee does not exist.
+
+<#GilderoyLockhart>
+    a <wizards#Wizard>
+    foaf:name "Gilderoy Lockhart";
+    foaf:gender "Male";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    #foaf:knows <#RonWeasly>
+    #foaf:knows <#HarryPotter>
+    #foaf:knows <#HermineGranger>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Second Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Half-blood".
 
 #Courses
 
 <#HistoryOfMagic>
     a <#CourseInstance>
     houses:hasParentOrganization <#hogwarts> ;
-    houses:slogan "" .
     class:instructor <#Flitwick> #Not sure if Schema Person is FOAF Person
+    #Most Students go to most courses so we do not map them
+
+<#DefenceAgainstTheDarkArts>
+    a <#CourseInstance>
+    houses:hasParentOrganization <#hogwarts> ;
+    class:instructor <#GilderoyLockhart> #Not sure if Schema Person is FOAF Person
     #Most Students go to most courses so we do not map them
 
 #Characters
 
 <#LunaLovegood>
-  a <wizards#Student>
-  foaf:name "Luna Lovegood";
-  foaf:gender "Female";
-  foaf:knows <#HelenaRavenclaw>
-  wizards:isInHouse <#Ravenclaw> ;
-  wizards:firstAppearance "Fifth Book";
-  wizard:isAlive "Yes"; 
-  wizard:hasFamiliar "Unknown";
-  wizard:bloodStatus "Pure-blood".
+    a <wizards#Student>
+    foaf:name "Luna Lovegood";
+    foaf:gender "Female";
+    foaf:knows <#HelenaRavenclaw>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Fifth Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood".
 
-<HelenaRavenclaw>
- a <wizards#Wizard>
- foaf:name "Helena Ravenclaw";
- foaf:gender "Female";
- foaf:knows <#LunaLovegood>
- wizards:isInHouse <#Ravenclaw> ;
- wizards:firstAppearance "Seventh Book";
- wizard:isAlive "No"; 
- wizard:hasFamiliar "Unknown";
- wizard:bloodStatus "Pure-blood".
+<#HelenaRavenclaw>
+    a <wizards#Wizard>
+    foaf:name "Helena Ravenclaw";
+    foaf:gender "Female";
+    foaf:knows <#LunaLovegood>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Seventh Book";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood".
+
+<#ChoChang>
+    a <wizards#Wizard>
+    foaf:name "Cho Chang";
+    foaf:gender "Female";
+    #foaf:knows <#CerdricDiggory>
+    #foaf:knows <#HarryPotter>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Third Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Owl";
+    wizard:bloodStatus "Pure-blood or half-blood".
+
+<#MyrteWarren>
+    a <wizards#Wizard>
+    foaf:name "Myrte Warren";
+    foaf:gender "Female";
+    #foaf:knows <#RonWeasly>
+    #foaf:knows <#HarryPotter>
+    #foaf:knows <#DracoMalfoy>
+    #foaf:knows <#HermineGranger>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Second Book";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Muggle-born".
+
+<#GarrickOllivander>
+    a <wizards#Wizard>
+    foaf:name "Garrick Ollivander";
+    foaf:gender "Male";
+    #foaf:knows <#LunaLovegood>
+    #foaf:knows <#HarryPotter>
+    #foaf:knows <#TomRiddle>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "First Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Half-blood".
