@@ -40,7 +40,14 @@
 
 <#HelgaHufflepuff>
     a <#wizard> ;
-    foaf:name "Helga Hufflepuff" .
+    foaf:name "Helga Hufflepuff";
+    foaf:gender "Female";
+    foaf:knows <#HelenaRavenclaw>
+    wizards:isInHouse <#Hufflepuff> ;
+    wizards:firstAppearance "First Game";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood or Half-Blood".
 
 # Houses
 <#Ravenclaw>
