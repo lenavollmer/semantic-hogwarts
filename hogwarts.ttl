@@ -6,42 +6,13 @@
 @prefix uni: <https://schema.org/CollegeOrUniversity> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix class: <https://schema.org/CourseInstance> .
-# TODO student, teacher
-
-# TODO Problem: constrains
-<#wizard>
-    a foaf:Person ;
-    # still at Hogwarts
-    # alive
-    # in a house
-    # first appearance
-    # gender
-
-# for wizards: hasFriend
-
-<#student>
-    a <#wizard> ;
-    # is in a house
-    # attends classes
-    # is in a year
-    # pets
-    # lineage
-
-
-<#teacher>
-    a <#wizard> ;
-    # teaches a class
-    # employed by hogwarts
-
-# founders
-<#rowenaravenclaw>
-    a <#wizard> ;
-    foaf:name "Rowena Ravenclaw" .
+@prefix wizards: <wizards.rdf> .
+@prefix houses: <houses.rdf> .
 
 <#hogwarts>
     a uni:EducationalOrganization ;
     uni:name "Hogwarts" ;
-    uni:founder <#rowenaravenclaw> ;
+    uni:founder <#RowenaRavenclaw> ;
     # TODO other 3 founders
     # uni:founder <#rowenaravenclaw> ;
     # uni:founder <#rowenaravenclaw> ;
@@ -50,48 +21,85 @@
     uni:foundingLocation "UK" ;
     # TODO double check format
     uni:logo "https://vignette.wikia.nocookie.net/harrypotter/images/6/61/Hogwarts-Wappen_2.png/revision/latest/top-crop/width/220/height/220?cb=20131224202326&path-prefix=de" ;
-    uni:subOrganization <#ravenclaw> .
-    # TODO other 3 houses
-    # uni:subOrganization <#ravenclaw> ;
-    # uni:subOrganization <#ravenclaw> ;
-    # uni:subOrganization <#ravenclaw> ;
-    # TODO create person/wizard
-    uni:owns "Dumbledore" 
-    uni:employee "Dumbledore"
-    uni:employee <#flitwick> . 
+    uni:subOrganization <#Ravenclaw>;
+    uni:owns <#AlbusDumbledore>;
+    uni:employee <#AlbusDumbledore>;
+    uni:employee <#FiliusFlitwick> . 
 
-# teacher
-# TODO employedBy
-<#flitwick>
+<#AlbusDumbledore>
+    a <wizards#Wizard> ;
+    uni:owns <#Hogwarts> ;
+    wizards:isInHouse <#Gryffindor> ;
+    wizards:firstAppeards "First Book";
+    wizard:isAlive "No" .
+
+# Founders
+<#RowenaRavenclaw>
     a <#wizard> ;
-    uni:owns <#ravenclaw> ;
-    uni:memberOf <#ravenclaw> ;
-    uni:knowsAbout "History of Magic" .
+    foaf:name "Rowena Ravenclaw" .
 
-# houses
-# TODO head of house difficult to map
-<#ravenclaw>
-    uni:hasParentOrganization <#hogwarts> ;
-    a uni:subOrganization ;
-    uni:slogan "" ;
-    uni:founder <#rowenaravenclaw> ;
-    # TODO owned by
-    # uni:HFHLKJH <#flitwick> .
+# Houses
+<#Ravenclaw>
+    a <houses#HogwartsHouse>
+    houses:hasParentOrganization <#hogwarts> ;
+    houses:slogan "" ;
+    houses:founder <#RowenaRavenclaw>;
+    houses:hastHeadTeacher: <#FiliusFlitwick>.
 
-<#hufflepuff>
-    uni:hasParentOrganization <#hogwarts> ;
-    a uni:subOrganization ;
-    uni:slogan "" ;
+<#Hufflepuff>
+    a <houses#HogwartsHouse>
+    houses:hasParentOrganization <#hogwarts> ;
+    houses:slogan "" .
 
-<#slytherin>
-    uni:hasParentOrganization <#hogwarts> ;
-    a uni:subOrganization ;
-    uni:slogan "" ;
+<#Slytherin>
+    a <houses#HogwartsHouse>
+    houses:hasParentOrganization <#hogwarts> ;
+    houses:slogan "" .
 
-<#gryffindor>
-    uni:hasParentOrganization <#hogwarts> ;
-    a uni:subOrganization ;
-    uni:slogan "" ;
+<#Gryffindor>
+    a <houses#HogwartsHouse>
+    houses:hasParentOrganization <#hogwarts> ;
+    houses:slogan "" .
 
-# students
+# Teachers
+<#FiliusFlitwick>
+    a <wizards#Teacher> ;
+    uni:owns <#Ravenclaw> ;
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppeards "First Book";
+    wizards:teaches <#HistroyOfMagic>;
+    wizard:isAlive "Yes" .
+    # TODO Foaf:employee does not exist.
 
+#Courses
+
+<#HistroyOfMagic>
+    a <#CourseInstance>
+    houses:hasParentOrganization <#hogwarts> ;
+    houses:slogan "" .
+    class:instructor <#Flitwick> #Not sure if Schema Person is FOAF Person
+    #Most Students go to most courses so we do not map them
+
+#Characters
+
+<#LunaLovegood>
+  a <wizards#Student>
+  foaf:name "Luna Lovegood";
+  foaf:gender "Female";
+  foaf:knows <#HelenaRavenclaw>
+  wizards:isInHouse <#Ravenclaw> ;
+  wizards:firstAppeards "Fifth Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Not known";
+  wizard:bloodStatus "Pure-blood".
+
+<HelenaRavenclaw>
+ a <wizards#Wizard>
+ foaf:name "Helena Ravenclaw";
+ foaf:gender "Female";
+ foaf:knows <#LunaLovegood>
+ wizards:isInHouse <#Ravenclaw> ;
+ wizards:firstAppeards "Seventh Book";
+ wizard:isAlive "No"; 
+ wizard:hasFamiliar "Not known";
+ wizard:bloodStatus "Pure-blood".

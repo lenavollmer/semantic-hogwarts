@@ -1,0 +1,14 @@
+<?xml version="1.0"?> <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wizards="wizards.rdf">
+
+<rdfs:Class rdf:ID="HogwartsHouse">
+<rdfs:comment>Class of Wizard Houses</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://schema.org/Organization"/>
+</rdfs:Class>
+
+<rdf:Property rdf:ID="hasHeadTeacher">
+    <rdfs:comment>Status of the character</rdfs:comment>
+    <rdfs:domain rdf:resource="#HogwartsHouse"/>
+    <rdfs:range rdf:resource="wizards#Teacher"/>
+</rdf:Property>
+
+</rdf:RDF>
