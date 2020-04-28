@@ -13,12 +13,8 @@
     a uni:EducationalOrganization ;
     uni:name "Hogwarts" ;
     uni:founder <#RowenaRavenclaw> ;
-<<<<<<< HEAD
     uni:founder <#SalazarSlytherin> ;
-=======
-    # TODO other 3 founders
-    # uni:founder <#rowenaravenclaw> ;
->>>>>>> ac04c049db00353043b0b2ef09bea2e224ecd6bb
+    uni:founder <#GodricGryffindor> ;
     uni:founder <#HelgaHufflepuff> ;
     # uni:founder <#rowenaravenclaw> ;
     uni:foundingDate "993" ;
@@ -26,12 +22,14 @@
     # TODO double check format
     uni:logo "https://vignette.wikia.nocookie.net/harrypotter/images/6/61/Hogwarts-Wappen_2.png/revision/latest/top-crop/width/220/height/220?cb=20131224202326&path-prefix=de" ;
     uni:subOrganization <#Ravenclaw> ;
+    uni:subOrganization <#Gryffindor>;
     uni:owns <#AlbusDumbledore> ;
     uni:owns <#DoloresUmbridge> ;
     uni:employee <#AlbusDumbledore> ;
     uni:employee <#FiliusFlitwick> ; 
     uni:employee <#SeverusSnape> ; 
-    uni:employee <#HoraceSlughorn> . 
+    uni:employee <#HoraceSlughorn> ;
+    uni:employee <#MinervaMcGonagall> .
 
 <#AlbusDumbledore>
     a <wizards#Wizard> ;
@@ -59,6 +57,10 @@
     wizard:isAlive "No"; 
     wizard:hasFamiliar "Unknown";
     wizard:bloodStatus "Pure-blood or Half-Blood".
+    
+<#GodricGryffindor>
+    a <#wizard> ;
+    foaf:name "Godric Gryffindor" .
 
 # Houses
 <#Ravenclaw>
@@ -89,7 +91,9 @@
 <#Gryffindor>
     a <houses#HogwartsHouse> ;
     houses:hasParentOrganization <#hogwarts> ;
-    houses:slogan "" .
+    houses:slogan "You might belong in Gryffindor, Where dwell the brave at heart, Their daring, nerve, and chivalry Set Gryffindors apart" .
+    houses:founder <#GodricGryffindor>;
+    houses:hasHeadTeacher: <#MinervaMcGonagall>.
 
 # Teachers
 # TODO Foaf:employee does not exist.
@@ -143,15 +147,6 @@
     wizard:isAlive "Yes"  ;
     wizard:bloodStatus "Half-Blood" .
 
-<#RemusLupin>
-    a <wizards#Teacher> ;
-    foaf:name "Remus Lupin" ;
-    wizards:isInHouse <#Gryffindor> ;
-    wizards:firstAppearance "Third Book";
-    wizards:teaches <#DefenceAgainstTheDarkArts>;
-    wizard:isAlive "No"  ;
-    wizard:bloodStatus "Half-Blood" .
-
 <#BartemiusCrouchJr>
     a <wizards#Teacher> ;
     foaf:name "Bartemius Crouch" ;
@@ -184,13 +179,58 @@
     wizards:teaches <#PomonaSprout>;
     wizard:isAlive "Yes";
     wizard:bloodStatus "Half-blood or Pure-blood" .
-    # TODO Foaf:employee does not exist.
     # foaf:knows <#MinervaMcGonagall>
     # foaf:knows <#NevilleLongbottom>
     # foaf:knows <#HarryPotter>
     foaf:knows <#FiliusFlitwick>
     foaf:knows <#CedricDiggory>
 
+
+<#MinervaMcGonagall>
+    a <wizards#Teacher> ;
+    uni:owns <#Gryffindor> ;
+    wizards:isInHouse <#Gryffindor> ;
+    wizards:firstAppearance "First Book";
+    wizards:teaches <#Transfiguration>;
+    foaf:knows <#AlbusDumbledore> ;
+    wizard:isAlive "Yes" ;
+    wizard:bloodStatus "Half-blood".
+
+<#RubeusHagrid>
+    a <wizards#Teacher> ;
+    wizards:isInHouse <#Gryffindor> ;
+    wizards:firstAppearance "First Book";
+    wizards:teaches <#CareofMagicalCreatures>;
+    foaf:knows <#AlbusDumbledore> ;
+    foaf:knows <#MinervaMcGonagall> ;
+    foaf:knows <#RonaldWeasley> ;
+    foaf:knows <#HermineGranger> ;
+    foaf:knows <#LilyPotter> ;
+    foaf:knows <#JamesPotter> ;
+    #foaf:knows <#SeverusSnape> ;  
+    #foaf:knows <#QuirinusQuirrell> ;
+    #foaf:knows <#PomonaSprout> ;
+    wizard:isAlive "Yes" ;
+    wizard:bloodStatus "Half-blood".
+
+<#RemusLupin>
+  a <wizards#Teacher>
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "Third Book";
+  wizards:teaches <#DefencaAgainstTheDarkArts>;
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#RonaldWeasley> ;
+  foaf:knows <#HermineGranger> ;
+  foaf:knows <#SiriusBlack> ;
+  foaf:knows <#PeterPettigrew> ;  
+  foaf:knows <#AlbusDumbledore> ;  
+  foaf:knows <#LilyPotter> ;  
+  foaf:knows <#JamesPotter> ;
+  #foaf:knows <#SeverusSnape> ;
+  #foaf:knows <#NymphadoraTonks> ;
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Half-blood".
 
 #Courses
 # Most Students go to most courses so we do not map them
@@ -235,8 +275,13 @@
 <#Herbology>
     a <#CourseInstance>
     houses:hasParentOrganization <#hogwarts> ;
-    class:instructor <#PomonaSprout> #Not sure if Schema Person is FOAF Person
-    #Most Students go to most courses so we do not map them
+    class:instructor <#PomonaSprout> .
+
+<#Transfiguration>
+    a <#CourseInstance>
+    houses:hasParentOrganization <#hogwarts> ;
+    class:instructor <#MinervaMcGonagall> .
+
 
 # Students
 <#LunaLovegood>
@@ -374,6 +419,76 @@
   wizard:hasFamiliar "Unknown";
   wizard:bloodStatus "Half-Blood".
 
+<#HarryPotter>
+  a <wizards#Student>
+  foaf:name "Harry Potter";
+  foaf:gender "Male";
+  foaf:knows <#RonaldWeasley> ;
+  foaf:knows <#LunaLovegood> ;
+  foaf:knows <#HermioneGranger> ;
+  foaf:knows <#AlbusDumbledore> ;
+  foaf:knows <#MinervaMcGonagall> ;
+  #foaf:knows <#LoardVoldemort> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Owl";
+  wizard:bloodStatus "Half-blood".
+
+<#RonaldWeasley>
+  a <wizards#Student>
+  foaf:name "Ronald Weasley";
+  foaf:gender "Male";
+  foaf:knows <#LunaLovegood> ;
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Rat";
+  wizard:bloodStatus "Pure-blood".
+
+<#HermioneGranger>
+  a <wizards#Student>
+  foaf:name "Hermione Granger";
+  foaf:gender "Female";
+  foaf:knows <#LunaLovegood> ;
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#RonaldWeasley> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Cat";
+  wizard:bloodStatus "Muggle".
+
+<#GinnyWeasley>
+  a <wizards#Student>
+  foaf:name "Ginny Weasley";
+  foaf:gender "Female";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#AlbusDumbledore> ;
+  foaf:knows <#MinervaMcGonagall> ;
+  foaf:knows <#RonaldWeasley> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Pure-blood".
+
+<#NevilleLongbottom>
+  a <wizards#Student>
+  foaf:name "Neville Longbottom";
+  foaf:gender "Male";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#RonaldWeasley> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Toad";
+  wizard:bloodStatus "Pure-blood".
+
 # Other characters
 <HelenaRavenclaw>
  a <wizards#Wizard> ;
@@ -456,3 +571,118 @@
   wizard:hasFamiliar "Unknown";
   wizard:bloodStatus "Pure-Blood or Half-Blood".
 
+<#SiriusBlack>
+  a <wizards#Wizard>
+  foaf:name "Sirius Black";
+  foaf:gender "Male";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#RonaldWeasley> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "Third Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Pure-blood".
+
+<#PeterPettigrew>
+  a <wizards#Wizard>
+  foaf:name "Peter Pettigrew";
+  foaf:gender "Male";
+  #foaf:knows <#LoardVoldemort> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "Third Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Rats";
+  wizard:bloodStatus "Half-blood or Pure-blood".
+
+<#LilyPotter>
+  a <wizards#Student>
+  foaf:name "Lily Potter";
+  foaf:gender "Female";
+  #foaf:knows <#LoardVoldemort> ;
+  foaf: <#HarryPotter>;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Muggle".
+
+  <#LilyPotter>
+  a <wizards#Student>
+  foaf:name "Lily Potter";
+  foaf:gender "Female";
+  #foaf:knows <#LoardVoldemort> ;
+  foaf: <#HarryPotter>;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Muggle".
+
+<#JamesPotter>
+  a <wizards#Student>
+  foaf:name "James Potter";
+  foaf:gender "Male";
+  #foaf:knows <#LoardVoldemort> ;
+  foaf:knows <#LilyPotter> ;
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#AlbusDumbledore> ;
+  foaf:know <#SiriusBlack>;
+  foaf:knows <#RemusLupin> ;
+  foaf:knows <#PeterPettigrew> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Pure-blood".
+
+<#NicholasdeMimsy-Porpington>
+  a <wizards#Student>
+  foaf:name "Nicholas de Mimsy-Porpington";
+  foaf:gender "Male";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#HermioneGranger> ;
+  foaf:knows <#RonaldWeasley> ;
+  foaf:know <#MinervaMcGonagall>;
+  foaf:knows <#AlbusDumbledore> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Unknown".
+
+<#FredWeasley>
+  a <wizards#Student>
+  foaf:name "Fred Weasley";
+  foaf:gender "Male";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Owl";
+  wizard:bloodStatus "Pure-blood".
+
+<#GeorgeWeasley>
+  a <wizards#Student>
+  foaf:name "George Weasley";
+  foaf:gender "Male";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Owl";
+  wizard:bloodStatus "Pure-blood".
+
+  <#GeorgeWeasley>
+  a <wizards#Student>
+  foaf:name "George Weasley";
+  foaf:gender "Male";
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#HermioneGranger> ;
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Owl";
+  wizard:bloodStatus "Pure-blood".
