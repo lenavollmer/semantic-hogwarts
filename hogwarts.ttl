@@ -15,7 +15,7 @@
     uni:founder <#RowenaRavenclaw> ;
     # TODO other 3 founders
     # uni:founder <#rowenaravenclaw> ;
-    # uni:founder <#rowenaravenclaw> ;
+    uni:founder <#HelgaHufflepuff> ;
     # uni:founder <#rowenaravenclaw> ;
     uni:foundingDate "993" ;
     uni:foundingLocation "UK" ;
@@ -37,6 +37,10 @@
 <#RowenaRavenclaw>
     a <#wizard> ;
     foaf:name "Rowena Ravenclaw" .
+
+<#HelgaHufflepuff>
+    a <#wizard> ;
+    foaf:name "Helga Hufflepuff" .
 
 # Houses
 <#Ravenclaw>
@@ -71,6 +75,22 @@
     wizard:isAlive "Yes" .
     # TODO Foaf:employee does not exist.
 
+<#PomonaSprout>
+    a <wizards#Teacher> ;
+    uni:owns <#Hufflepuff> ;
+    wizards:isInHouse <#Hufflepuff> ;
+    wizards:firstAppearance "First Book";
+    wizards:teaches <#PomonaSprout>;
+    wizard:isAlive "Yes";
+    wizard:bloodStatus "Half-blood or Pure-blood" .
+    # TODO Foaf:employee does not exist.
+    # foaf:knows <#MinervaMcGonagall>
+    # foaf:knows <#NevilleLongbottom>
+    # foaf:knows <#HarryPotter>
+    foaf:knows <#FiliusFlitwick>
+    foaf:knows <#CedricDiggory>
+
+
 #Courses
 
 <#HistoryOfMagic>
@@ -78,6 +98,12 @@
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" .
     class:instructor <#Flitwick> #Not sure if Schema Person is FOAF Person
+    #Most Students go to most courses so we do not map them
+
+<#Herbology>
+    a <#CourseInstance>
+    houses:hasParentOrganization <#hogwarts> ;
+    class:instructor <#PomonaSprout> #Not sure if Schema Person is FOAF Person
     #Most Students go to most courses so we do not map them
 
 #Characters
@@ -103,3 +129,65 @@
  wizard:isAlive "No"; 
  wizard:hasFamiliar "Unknown";
  wizard:bloodStatus "Pure-blood".
+
+ <#CedricDiggory>
+  a <wizards#Student>
+  foaf:name "Cedric Diggory";
+  foaf:gender "Male";
+  #foaf:knows <#HarryPotter>
+  #foaf:knows <#ChoChang>
+  foaf:knows <#PomonaSprout>
+  wizards:isInHouse <#Hufflepuff> ;
+  wizards:firstAppearance "Thrid Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Pure-blood".
+
+ <#HannahAbbott>
+  a <wizards#Student>
+  foaf:name "Hannah Abbott";
+  foaf:gender "Female";
+  #foaf:knows <#NevilleLongbottom>
+  #foaf:knows <#SusanBones>
+  wizards:isInHouse <#Hufflepuff> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Half-blood".
+
+ <#SusanBones>
+  a <wizards#Student>
+  foaf:name "Susan Bones";
+  foaf:gender "Female";
+  foaf:knows <#HannahAbbott>
+  wizards:isInHouse <#Hufflepuff> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Half-Blood".
+
+ <#NymphadoraTonks>
+  a <wizards#Student>
+  foaf:name "Nymphadora Tonks";
+  foaf:gender "Female";
+  #foaf:knows <#SiriusBlack>
+  #foaf:knows <#RemusLupin>
+  #foaf:knows <#HarryPotter>
+  #foaf:knows <#AlastorMoody>
+  wizards:isInHouse <#Hufflepuff> ;
+  wizards:firstAppearance "First Book";
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Half-Blood".
+
+ <#NewtonScamander>
+  a <wizards#Student>
+  foaf:name "Newton Scamander";
+  foaf:gender "Male";
+  foaf:knows <#AlbusDumbledore>
+  wizards:isInHouse <#Hufflepuff> ;
+  wizards:firstAppearance "Phantastic Beats Movie";
+  wizard:isAlive "Yes"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Pure-Blood or Half-Blood".
+
