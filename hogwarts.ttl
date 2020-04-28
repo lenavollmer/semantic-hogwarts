@@ -41,7 +41,15 @@
 # Founders
 <#RowenaRavenclaw>
     a <#wizard> ;
-    foaf:name "Rowena Ravenclaw" .
+    foaf:name "Rowena Ravenclaw" 
+    foaf:gender "Female";
+    foaf:knows <#HelenaRavenclaw>
+    #other founders
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "First Game";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood or half-blood".
 
 <#SalazarSlytherin>
     a <#wizard> ;
@@ -149,13 +157,18 @@
     wizard:bloodStatus "Half-Blood" .
 
 <#GilderoyLockhart>
-    a <wizards#Teacher> ;
-    foaf:name "Gilderoy Lockhart" ;
+    a <wizards#Wizard>
+    foaf:name "Gilderoy Lockhart";
+    foaf:gender "Male";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    foaf:knows <#RonWeasly>
+    foaf:knows <#HarryPotter>
+    foaf:knows <#HermineGranger>
     wizards:isInHouse <#Ravenclaw> ;
     wizards:firstAppearance "Second Book";
-    wizards:teaches <#DefenceAgainstTheDarkArts>;
-    wizard:isAlive "Yes"  ;
-    wizard:bloodStatus "Half-Blood" .
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Half-blood".
 
 <#BartemiusCrouchJr>
     a <wizards#Teacher> ;
@@ -451,7 +464,7 @@
   #foaf:knows <#GilderoyLockhart> ;  
   #foaf:knows <#BartemiusCrouchJr> ;
   #foaf:knows <#DolorisUmbridge> ;
-  #foaf:knows <#MyrteWarren> ;  
+  #foaf:knows <#MyrtleWarren> ;  
   #foaf:knows <#GarrickOllivander> ;
   #foaf:knows <#CedricDiggory> ;  
   wizards:isInHouse <#Gryffindor> ;
@@ -481,7 +494,7 @@
   #foaf:knows <#DracoMalfoy> ;
   #foaf:knows <#VincentCrabbe> ;
   #foaf:knows <#GregoryGoyle> ;  
-  #foaf:knows <#MyrteWarren> ;
+  #foaf:knows <#MyrtleWarren> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -509,7 +522,7 @@
   #foaf:knows <#VincentCrabbe> ;
   #foaf:knows <#GregoryGoyle> ;
   #foaf:knows <#HoraceSlughorn> ;  
-  #foaf:knows <#MyrteWarren> ;
+  #foaf:knows <#MyrtleWarren> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -626,6 +639,32 @@
   wizard:isAlive "Yes"; 
   wizard:hasFamiliar "Owl";
   wizard:bloodStatus "Pure-blood".
+
+<#ChoChang>
+    a <wizards#Student>
+    foaf:name "Cho Chang";
+    foaf:gender "Female";
+    #foaf:knows <#CerdricDiggory>
+    #foaf:knows <#HarryPotter>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Third Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Owl";
+    wizard:bloodStatus "Pure-blood or half-blood".
+
+<#MyrtleWarren>
+    a <wizards#Student>
+    foaf:name "Myrtle Warren";
+    foaf:gender "Female";
+    #foaf:knows <#RonWeasly>
+    #foaf:knows <#HarryPotter>
+    #foaf:knows <#DracoMalfoy>
+    #foaf:knows <#HermineGranger>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Second Book";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Muggle-born".
   
 
 # Other characters
@@ -838,3 +877,36 @@
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
   wizard:bloodStatus "Pure-blood".
+    a <wizards#Student>
+    foaf:name "Luna Lovegood";
+    foaf:gender "Female";
+    foaf:knows <#HelenaRavenclaw>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Fifth Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood".
+
+<#HelenaRavenclaw>
+    a <wizards#Wizard>
+    foaf:name "Helena Ravenclaw";
+    foaf:gender "Female";
+    foaf:knows <#LunaLovegood>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Seventh Book";
+    wizard:isAlive "No"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Pure-blood".
+
+<#GarrickOllivander>
+    a <wizards#Wizard>
+    foaf:name "Garrick Ollivander";
+    foaf:gender "Male";
+    #foaf:knows <#LunaLovegood>
+    #foaf:knows <#HarryPotter>
+    #foaf:knows <#TomRiddle>
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "First Book";
+    wizard:isAlive "Yes"; 
+    wizard:hasFamiliar "Unknown";
+    wizard:bloodStatus "Half-blood".
