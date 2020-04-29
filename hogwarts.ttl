@@ -230,6 +230,9 @@
   #foaf:knows <#GilderoyLockhart> ;  
   #foaf:knows <#BartemiusCrouchJr> ;
   #foaf:knows <#DolorisUmbridge> ;
+  #foaf:knows <#MyrteWarren> ;  
+  #foaf:knows <#GarrickOllivander> ;
+  #foaf:knows <#CedricDiggory> ;  
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -256,7 +259,8 @@
   foaf:knows <#DeanThomas> ;
   #foaf:knows <#DracoMalfoy> ;
   #foaf:knows <#VincentCrabbe> ;
-  #foaf:knows <#GregoryGoyle> ;
+  #foaf:knows <#GregoryGoyle> ;  
+  #foaf:knows <#MyrteWarren> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -283,7 +287,8 @@
   #foaf:knows <#DracoMalfoy> ;  
   #foaf:knows <#VincentCrabbe> ;
   #foaf:knows <#GregoryGoyle> ;
-  #foaf:knows <#HoraceSlughorn> ;
+  #foaf:knows <#HoraceSlughorn> ;  
+  #foaf:knows <#MyrteWarren> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
