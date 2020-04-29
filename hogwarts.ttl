@@ -193,15 +193,15 @@
     wizards:firstAppearance "First Book";
     wizards:teaches <#Transfiguration>;
     foaf:knows <#AlbusDumbledore> ;  
-    foaf:knows <#HarryPotter>
+    foaf:knows <#HarryPotter> ;
+    foaf:knows <#RubeusHagrid> ;
     #foaf:knows <#SeverusSnape> ;
-    #foaf:knows <#PomonaSprout> ;
+    #foaf:knows <#PomonaSprout> ;    
     wizard:isAlive "Yes" ;
     wizard:bloodStatus "Half-blood".
     
 <#RubeusHagrid>
     a <wizards#Teacher> ;
-    uni:owns <#Gryffindor> ;
     wizards:isInHouse <#Gryffindor> ;
     wizards:firstAppearance "First Book";
     wizards:teaches <#CareofMagicalCreatures>;
@@ -235,6 +235,25 @@
   wizard:isAlive "No"; 
   wizard:hasFamiliar "Unknown";
   wizard:bloodStatus "Half-blood". 
+
+<#RemusLupin>
+  a <wizards#Teacher>
+  wizards:isInHouse <#Gryffindor> ;
+  wizards:firstAppearance "Third Book";
+  wizards:teaches <#DefencaAgainstTheDarkArts>;
+  foaf:knows <#HarryPotter> ;
+  foaf:knows <#RonaldWeasley> ;
+  foaf:knows <#HermineGranger> ;
+  foaf:knows <#SiriusBlack> ;
+  foaf:knows <#PeterPettigrew> ;  
+  foaf:knows <#AlbusDumbledore> ;  
+  foaf:knows <#LilyPotter> ;  
+  foaf:knows <#JamesPotter> ;
+  #foaf:knows <#SeverusSnape> ;
+  #foaf:knows <#NymphadoraTonks> ;
+  wizard:isAlive "No"; 
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Half-blood".
 
 #Courses
 # Most Students go to most courses so we do not map them
@@ -450,7 +469,9 @@
   foaf:knows <#JamesPotter> ;
   foaf:knows <#AlbusDumbledore> ;
   foaf:knows <#MinervaMcGonagall> ;  
-  foaf:knows <#NicholasdeMimsy> ;
+  foaf:knows <#NicholasdeMimsy> ;  
+  foaf:knows <#PercyWeasley> ;
+  foaf:knows <#OliverWood> ;
   #foaf:knows <#LoardVoldemort> ;
   #foaf:knows <#DracoMalfoy> ;
   #foaf:knows <#VincentCrabbe> ;
@@ -458,6 +479,12 @@
   #foaf:knows <#NymphadoraTonks> ;
   #foaf:knows <#LuciusMalfoy> ;
   #foaf:knows <#BellatrixLestrange> ;
+  #foaf:knows <#ChoChang> ;
+  #foaf:knows <#HoraceSlughorn> ;
+  #foaf:knows <#QuirinusQuirrell> ;
+  #foaf:knows <#GilderoyLockhart> ;  
+  #foaf:knows <#BartemiusCrouchJr> ;
+  #foaf:knows <#DolorisUmbridge> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -479,7 +506,8 @@
   foaf:knows <#RubeusHagrid> ;
   foaf:knows <#HermioneGranger> ;  
   foaf:knows <#SeamusFinnigan> ;  
-  foaf:knows <#RemusLupin> ;
+  foaf:knows <#RemusLupin> ;  
+  foaf:knows <#PercyWeasley> ;
   foaf:knows <#DeanThomas> ;
   #foaf:knows <#DracoMalfoy> ;
   #foaf:knows <#VincentCrabbe> ;
@@ -504,9 +532,13 @@
   foaf:knows <#GinnyWeasley> ;
   foaf:knows <#NevilleLongbottom> ;  
   foaf:knows <#RubeusHagrid> ;  
-  foaf:knows <#SiriusBlack> ;
+  foaf:knows <#SiriusBlack> ;  
+  foaf:knows <#PercyWeasley> ;
   #foaf:knows <#BellatrixLestrange> ;
-  #foaf:knows <#DracoMalfoy> ;
+  #foaf:knows <#DracoMalfoy> ;  
+  #foaf:knows <#VincentCrabbe> ;
+  #foaf:knows <#GregoryGoyle> ;
+  #foaf:knows <#HoraceSlughorn> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -527,11 +559,13 @@
   foaf:knows <#RonaldWeasley> ;
   foaf:knows <#HermioneGranger> ;  
   foaf:knows <#NevilleLongbottom> ;
+  foaf:knows <#PercyWeasley> ;
   #foaf:knows <#NymphadoraTonks> ;
+  #foaf:knows <#HoraceSlughorn> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
-  wizard:hasFamiliar "Unknown";
+  wizard:hasFamiliar "Minimuff";
   wizard:bloodStatus "Pure-blood".
 
 <#NevilleLongbottom>
@@ -621,6 +655,7 @@
   wizard:isAlive "Yes"; 
   wizard:hasFamiliar "Owl";
   wizard:bloodStatus "Pure-blood".
+  
 
 # Other characters
 <HelenaRavenclaw>
@@ -721,6 +756,7 @@
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "Third Book";
   wizard:isAlive "No"; 
+  wizard:hasFamiliar "Hippogryph";
   wizard:bloodStatus "Pure-blood".
 
 <#PeterPettigrew>
@@ -737,7 +773,7 @@
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "Third Book";
   wizard:isAlive "No"; 
-  wizard:hasFamiliar "Rats";
+  wizard:hasFamiliar "Rat";
   wizard:bloodStatus "Half-blood or Pure-blood".
 
 <#LilyPotter>
@@ -752,6 +788,7 @@
   foaf:knows <#PeterPettigrew> ;
   #foaf:knows <#SeverusSnape> ;
   #foaf:knows <#LoardVoldemort> ;
+  #foaf:knows <#HoraceSlughorn> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "No"; 
@@ -787,7 +824,8 @@
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "No"; 
-  wizard:bloodStatus "Unknown".
+  wizard:hasFamiliar "Unknown";
+  wizard:bloodStatus "Muggle".
 
 <#MollyWeasley>
   a <wizards#Wizard>
@@ -802,6 +840,7 @@
   foaf:knows <#RemusLupin> ;
   foaf:knows <#SiriusBlack> ;  
   foaf:knows <#HermioneGranger> ;
+  foaf:knows <#PercyWeasley> ;
   #foaf:knows <#NymphadoraTonks> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
@@ -811,7 +850,7 @@
 <#ArthurWeasley>
   a <wizards#Wizard>
   foaf:name "Arthur Weasley";
-  foaf:gender "Female";  
+  foaf:gender "Male";  
   foaf:knows <#GeorgeWeasley> ;
   foaf:knows <#FredWeasley> ;
   foaf:knows <#GinnyWeasley> ;
@@ -821,6 +860,7 @@
   foaf:knows <#RemusLupin> ;
   foaf:knows <#SiriusBlack> ;  
   foaf:knows <#HermioneGranger> ;
+  foaf:knows <#PercyWeasley> ;
   #foaf:knows <#NymphadoraTonks> ;
   #foaf:knows <#LuciusMalfoy> ;
   wizards:isInHouse <#Gryffindor> ;
