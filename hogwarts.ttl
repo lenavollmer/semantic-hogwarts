@@ -192,12 +192,98 @@
   foaf:gender "Female" ;
   foaf:knows <#HelenaRavenclaw> ;
   wizards:isInHouse <#Ravenclaw> ;
-  wizards:firstAppearance "Fifth Book";
+  wizards:firstAppearance "Fifth Book" ;
   wizard:isAlive "Yes" ; 
   wizard:hasFamiliar "Unknown" ;
-  wizard:bloodStatus "Pure-blood".
+  wizard:bloodStatus "Pure-blood" .
   
+<#MarcusFlint>
+    a <wizards#Student> ;
+    foaf:name "Marcus Flint" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#LucianBole> ;
+    foaf:knows <#DracoMalfoy> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Unknown" .
 
+<#LucianBole>
+    a <wizards#Student> ;
+    foaf:name "Lucian Bole" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#MarcusFlint> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Unknown" .
+
+<#DracoMalfoy>
+    a <wizards#Student> ;
+    foaf:name "Draco Malfoy" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#BellatrixLestrange> ;
+    foaf:knows <#LuciusMalfoy> ;
+    foaf:knows <#MarcusFlint> ;
+    foaf:knows <#LucianBole> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#GregoryGoyle> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#VincentCrabbe>
+    a <wizards#Student> ;
+    foaf:name "Vincent Crabbe" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#GregoryGoyle> ;
+    foaf:knows <#PansyParkinson> ;
+    foaf:knows <#MillicentBulstrode> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "No" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#GregoryGoyle>
+    a <wizards#Student> ;
+    foaf:name "Gregory Goyle" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#PansyParkinson> ;
+     foaf:knows <#MillicentBulstrode> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#PansyParkinson>
+    a <wizards#Student> ;
+    foaf:name "Pansy Parkinson" ;
+    foaf:gender "Female" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#GregoryGoyle> ;
+     foaf:knows <#MillicentBulstrode> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Unknown" .
+
+<#MillicentBulstrode>
+    a <wizards#Student> ;
+    foaf:name "Millicent Bulstrode" ;
+    foaf:gender "Female" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#GregoryGoyle> ;
+    foaf:knows <#PansyParkinson> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Half-blood" .
 
 # Other characters
 <HelenaRavenclaw>
@@ -206,7 +292,52 @@
  foaf:gender "Female" ;
  foaf:knows <#LunaLovegood> ;
  wizards:isInHouse <#Ravenclaw> ;
- wizards:firstAppearance "Seventh Book";
+ wizards:firstAppearance "Seventh Book" ;
  wizard:isAlive "No" ; 
  wizard:hasFamiliar "Unknown" ;
- wizard:bloodStatus "Pure-blood".
+ wizard:bloodStatus "Pure-blood" .
+
+ <BloodyBaron>
+ a <wizards#Wizard> ;
+ foaf:name "The Bloody Baron" ;
+ foaf:gender "Male" ;
+ wizards:isInHouse <#Slytherin> ;
+ wizards:firstAppearance "First Book" ;
+ wizard:isAlive "No" ; 
+ wizard:hasFamiliar "Unknown" ;
+ wizard:bloodStatus "Unknown" .
+
+<#Voldemort>
+    a <wizards#Wizard> ;
+    foaf:name "Tom Riddle" ;
+    foaf:name "Voldemort"
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#BellatrixLestrange> ;
+    foaf:knows <#LuciusMalfoy> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "No" ; 
+    wizard:hasFamiliar "Snake - Nagini" ;
+    wizard:bloodStatus "Half-blood" .
+
+<#BellatrixLestrange>
+    a <wizards#Wizard> ;
+    foaf:name "Bellatrix Lestrange" ;
+    foaf:gender "Female" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#LuciusMalfoy> ;
+    foaf:knows <#Voldemort> ;
+    wizards:firstAppearance "Fourth Book" ;
+    wizard:isAlive "No" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#LuciusMalfoy>
+    a <wizards#Wizard> ;
+    foaf:name "Lucius Malfoy" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#BellatrixLestrange> ;
+    foaf:knows <#Voldemort> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Pure-blood" .
