@@ -1,0 +1,32 @@
+kind: pipeline
+type: docker
+name: generate graph
+
+trigger:
+  branch:
+    - master
+
+steps:
+  - name: generate and push
+    image: alpine
+    environment:
+      SSH_PRIVATE_KEY_GITHUB:
+        from_secret: private_key_github
+    commands:
+      - apk add git
+      - apk add --update nodejs npm
+      - apk add --update openssh-client bash
+      - apk add --update python3
+      - apk add --update graphviz
+      - pip3 install --upgrade pip setuptools
+      - pip3 install requests
+      - pip3 install rdflib
+      - git clone https://github.com/fatestigma/ontology-visualization
+      - python3 ./ontology-visualization/ontology_viz.py -o hog.dot hogwarts.ttl
+      - git add hog.dot
+      - mkdir -p /root/.ssh
+      - eval $(ssh-agent -s)
+      - bash -c 'ssh-add <(echo "$SSH_PRIVATE_KEY_GITHUB")'
+      - ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - git push origin master
+
