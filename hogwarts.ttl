@@ -123,6 +123,7 @@
     wizards:firstAppearance "First Book" ;
     wizards:teaches <#HistoryOfMagic> ;
     wizard:isAlive "Yes" .
+    wizard:bloodStatus "Half-blood".
 
 <#SeverusSnape>
     a <wizards#Teacher> ;
