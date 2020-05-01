@@ -28,7 +28,7 @@ steps:
       - git clone git@github.com:troppes/semantic-hogwarts.git
       - cd semantic-hogwarts
       - git clone https://github.com/fatestigma/ontology-visualization
-      - python3 ./ontology-visualization/ontology_viz.py -o hogwarts.dot hogwarts.ttl
+      - python3 ontology-visualization/ontology_viz.py -o hogwarts.dot hogwarts.ttl
       - git add hogwarts.dot
       - dot -Tpng -o hogwarts.png hogwarts.dot
       - git add hogwarts.png
