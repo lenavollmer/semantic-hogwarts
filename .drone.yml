@@ -6,8 +6,8 @@ steps:
   - name: generate and push
     image: alpine
     environment:
-      SSH_PRIVATE_KEY_GITEA:
-        from_secret: private_key_gitea
+      SSH_PRIVATE_KEY_GITHUB:
+        from_secret: private_key_github
     commands:
       - apk add git
       - apk add --update nodejs npm
