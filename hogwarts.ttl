@@ -74,7 +74,7 @@
     a <wizards#Wizard> ;
     foaf:name "Rowena Ravenclaw" ;
     foaf:gender "Female" ;
-    foaf:knows <#HelenaRavenclaw>
+    foaf:knows <#HelenaRavenclaw> ;
     wizards:firstAppearance "First Game" ;
     wizards:isAlive "No" ; 
     wizards:bloodStatus "Pure-blood or Half-blood" .
@@ -161,7 +161,7 @@
     wizards:isInHouse <#Ravenclaw> ;
     wizards:firstAppearance "First Book" ;
     wizards:teaches <#HistoryOfMagic> ;
-    wizards:isAlive "Yes" .
+    wizards:isAlive "Yes" ;
     wizards:bloodStatus "Half-blood" .
 
 <#SeverusSnape>
@@ -265,7 +265,7 @@
     wizards:bloodStatus "Half-blood" .
 
 <#RemusLupin>
-    a <wizards#Teacher>
+    a <wizards#Teacher> ;
     wizards:isInHouse <#Gryffindor> ;
     wizards:firstAppearance "Third Book" ;
     wizards:teaches <#DefencaAgainstTheDarkArts> ;
@@ -717,7 +717,7 @@
     wizards:bloodStatus "Pure-blood or Half-blood" .
 
 <#ChoChang>
-    a <wizards#Student>
+    a <wizards#Student> ;
     foaf:name "Cho Chang" ;
     foaf:gender "Female" ;
     foaf:knows <#CerdricDiggory> ;
@@ -729,7 +729,7 @@
     wizards:bloodStatus "Pure-blood or Half-blood" .
 
 <#MyrtleWarren>
-    a <wizards#Student>
+    a <wizards#Student> ;
     foaf:name "Myrtle Warren" ;
     foaf:gender "Female" ;
     foaf:knows <#RonWeasly> ;
@@ -767,7 +767,7 @@
 <#LordVoldemort>
     a <wizards#Wizard> ;
     foaf:name "Tom Riddle" ;
-    foaf:name "Voldemort"
+    foaf:name "Voldemort" ;
     foaf:gender "Male" ;
     wizards:isInHouse <#Slytherin> ;
     foaf:knows <#BellatrixLestrange> ;
@@ -816,7 +816,7 @@
     a <wizards#Wizard> ;
     foaf:name "Newton Scamander" ;
     foaf:gender "Male" ;
-    foaf:knows <#AlbusDumbledore>
+    foaf:knows <#AlbusDumbledore> ;
     wizards:isInHouse <#Hufflepuff> ;
     wizards:firstAppearance "Phantastic Beats Movie" ;
     wizards:isAlive "Yes" ; 
@@ -955,7 +955,7 @@
     a <wizards#Wizard> ;
     foaf:name "Helena Ravenclaw" ;
     foaf:gender "Female" ;
-    foaf:knows <#LunaLovegood>
+    foaf:knows <#LunaLovegood> ;
     wizards:isInHouse <#Ravenclaw> ;
     wizards:firstAppearance "Seventh Book" ;
     wizards:isAlive "No" ; 
