@@ -1,6 +1,10 @@
 kind: pipeline
 type: docker
-name: generate Graph
+name: generate graph
+
+trigger:
+  branch:
+    - master
 
 steps:
   - name: generate and push
@@ -15,6 +19,7 @@ steps:
       - apk add --update python3
       - apk add --update graphviz
       - pip3 install --upgrade pip setuptools
+      - pip3 install requests
       - pip3 install rdflib
       - git clone https://github.com/fatestigma/ontology-visualization
       - python3 ./ontology-visualization/ontology_viz.py -o hog.dot hogwarts.ttl
