@@ -21,6 +21,8 @@ steps:
       - pip3 install --upgrade pip setuptools
       - pip3 install requests
       - pip3 install rdflib
+      - git clone git@github.com:troppes/semantic-hogwarts.git
+      - cd semantic-hogwarts
       - git clone https://github.com/fatestigma/ontology-visualization
       - python3 ./ontology-visualization/ontology_viz.py -o hog.dot hogwarts.ttl
       - git add hog.dot
