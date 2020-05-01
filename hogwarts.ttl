@@ -13,7 +13,12 @@
     a uni:EducationalOrganization ;
     uni:name "Hogwarts" ;
     uni:founder <#RowenaRavenclaw> ;
+<<<<<<< HEAD
     uni:founder <#SalazarSlytherin> ;
+=======
+    # TODO other 3 founders
+    # uni:founder <#rowenaravenclaw> ;
+>>>>>>> ac04c049db00353043b0b2ef09bea2e224ecd6bb
     uni:founder <#HelgaHufflepuff> ;
     # uni:founder <#rowenaravenclaw> ;
     uni:foundingDate "993" ;
@@ -164,6 +169,22 @@
     wizards:teaches <#PomonaSprout>;
     wizard:isAlive "Yes";
     wizard:bloodStatus "Half-blood or Pure-blood" .
+    # foaf:knows <#MinervaMcGonagall>
+    # foaf:knows <#NevilleLongbottom>
+    # foaf:knows <#HarryPotter>
+    foaf:knows <#FiliusFlitwick>
+    foaf:knows <#CedricDiggory>
+
+
+<#PomonaSprout>
+    a <wizards#Teacher> ;
+    uni:owns <#Hufflepuff> ;
+    wizards:isInHouse <#Hufflepuff> ;
+    wizards:firstAppearance "First Book";
+    wizards:teaches <#PomonaSprout>;
+    wizard:isAlive "Yes";
+    wizard:bloodStatus "Half-blood or Pure-blood" .
+    # TODO Foaf:employee does not exist.
     # foaf:knows <#MinervaMcGonagall>
     # foaf:knows <#NevilleLongbottom>
     # foaf:knows <#HarryPotter>
