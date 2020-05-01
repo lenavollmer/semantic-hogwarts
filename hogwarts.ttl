@@ -97,6 +97,16 @@
 
 # Teachers
 # TODO Foaf:employee does not exist.
+<#DoloresUmbridge>
+    a <wizards#Teacher> ;
+    uni:owns <#Hogwarts> ;
+    foaf:name "Dolores Umbridge" ;
+    wizards:isInHouse <#Slytherin> ;
+    wizards:firstAppearance "Fifth Book";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    wizard:isAlive "Yes"  ;
+    wizard:bloodStatus "Half-Blood" .
+
 <#FiliusFlitwick>
     a <wizards#Teacher> ;
     foaf:name "Filius Flitwick" ;
@@ -163,27 +173,12 @@
     wizards:firstAppearance "First Book";
     wizards:teaches <#PomonaSprout>;
     wizard:isAlive "Yes";
-    wizard:bloodStatus "Half-blood or Pure-blood" .
+    wizard:bloodStatus "Half-blood or Pure-blood" ;
     # foaf:knows <#MinervaMcGonagall>
     # foaf:knows <#NevilleLongbottom>
     # foaf:knows <#HarryPotter>
-    foaf:knows <#FiliusFlitwick>
-    foaf:knows <#CedricDiggory>
-
-
-<#PomonaSprout>
-    a <wizards#Teacher> ;
-    uni:owns <#Hufflepuff> ;
-    wizards:isInHouse <#Hufflepuff> ;
-    wizards:firstAppearance "First Book";
-    wizards:teaches <#PomonaSprout>;
-    wizard:isAlive "Yes";
-    wizard:bloodStatus "Half-blood or Pure-blood" .
-    # foaf:knows <#MinervaMcGonagall>
-    # foaf:knows <#NevilleLongbottom>
-    # foaf:knows <#HarryPotter>
-    foaf:knows <#FiliusFlitwick>
-    foaf:knows <#CedricDiggory>
+    foaf:knows <#FiliusFlitwick> ;
+    foaf:knows <#CedricDiggory> .
 
 
 <#MinervaMcGonagall>
@@ -236,39 +231,10 @@
   wizard:hasFamiliar "Unknown";
   wizard:bloodStatus "Half-blood". 
 
-<#RemusLupin>
-  a <wizards#Teacher>
-  wizards:isInHouse <#Gryffindor> ;
-  wizards:firstAppearance "Third Book";
-  wizards:teaches <#DefencaAgainstTheDarkArts>;
-  foaf:knows <#HarryPotter> ;
-  foaf:knows <#RonaldWeasley> ;
-  foaf:knows <#HermineGranger> ;
-  foaf:knows <#SiriusBlack> ;
-  foaf:knows <#PeterPettigrew> ;  
-  foaf:knows <#AlbusDumbledore> ;  
-  foaf:knows <#LilyPotter> ;  
-  foaf:knows <#JamesPotter> ;
-  #foaf:knows <#SeverusSnape> ;
-  #foaf:knows <#NymphadoraTonks> ;
-  wizard:isAlive "No"; 
-  wizard:hasFamiliar "Unknown";
-  wizard:bloodStatus "Half-blood".
 
 #Courses
 # Most Students go to most courses so we do not map them
 # Not sure if  class:instructor schema Person is FOAF Person
-<#DoloresUmbridge>
-    a <wizards#Teacher> ;
-    uni:owns <#Hogwarts> ;
-    foaf:name "Dolores Umbridge" ;
-    wizards:isInHouse <#Slytherin> ;
-    wizards:firstAppearance "Fifth Book";
-    wizards:teaches <#DefenceAgainstTheDarkArts>;
-    wizard:isAlive "Yes"  ;
-    wizard:bloodStatus "Half-Blood" .
-
-
 <#HistoryOfMagic>
     a <#CourseInstance> ;
     houses:hasParentOrganization <#hogwarts> ;
@@ -414,7 +380,7 @@
   a <wizards#Student>
   foaf:name "Cedric Diggory";
   foaf:gender "Male";
-  #foaf:knows <#HarryPotter>
+  foaf:knows <#HarryPotter>
   #foaf:knows <#ChoChang>
   foaf:knows <#PomonaSprout>
   wizards:isInHouse <#Hufflepuff> ;
@@ -427,8 +393,8 @@
   a <wizards#Student>
   foaf:name "Hannah Abbott";
   foaf:gender "Female";
-  #foaf:knows <#NevilleLongbottom>
-  #foaf:knows <#SusanBones>
+  foaf:knows <#NevilleLongbottom>
+  foaf:knows <#SusanBones>
   wizards:isInHouse <#Hufflepuff> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "Yes"; 
@@ -472,13 +438,13 @@
   foaf:knows <#NicholasdeMimsy> ;  
   foaf:knows <#PercyWeasley> ;
   foaf:knows <#OliverWood> ;
-  #foaf:knows <#LoardVoldemort> ;
-  #foaf:knows <#DracoMalfoy> ;
-  #foaf:knows <#VincentCrabbe> ;
-  #foaf:knows <#GregoryGoyle> ;
-  #foaf:knows <#NymphadoraTonks> ;
-  #foaf:knows <#LuciusMalfoy> ;
-  #foaf:knows <#BellatrixLestrange> ;
+  foaf:knows <#LordVoldemort> ;
+  foaf:knows <#DracoMalfoy> ;
+  foaf:knows <#VincentCrabbe> ;
+  foaf:knows <#GregoryGoyle> ;
+  foaf:knows <#NymphadoraTonks> ;
+  foaf:knows <#LuciusMalfoy> ;
+  foaf:knows <#BellatrixLestrange> ;
   #foaf:knows <#ChoChang> ;
   #foaf:knows <#HoraceSlughorn> ;
   #foaf:knows <#QuirinusQuirrell> ;
@@ -774,7 +740,7 @@
   foaf: <#JamesPotter>;  
   foaf: <#LilyPotter>;
   #foaf:knows <#SeverusSnape> ;
-  #foaf:knows <#LoardVoldemort> ;
+  #foaf:knows <#LordVoldemort> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "Third Book";
   wizard:isAlive "No"; 
@@ -792,7 +758,7 @@
   foaf:knows <#RemusLupin> ;
   foaf:knows <#PeterPettigrew> ;
   #foaf:knows <#SeverusSnape> ;
-  #foaf:knows <#LoardVoldemort> ;
+  #foaf:knows <#LordVoldemort> ;
   #foaf:knows <#HoraceSlughorn> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
@@ -810,7 +776,7 @@
   foaf:knows <#RemusLupin> ;
   foaf:knows <#PeterPettigrew> ;
   #foaf:knows <#SeverusSnape>
-  #foaf:knows <#LoardVoldemort> ;
+  #foaf:knows <#LordVoldemort> ;
   wizards:isInHouse <#Gryffindor> ;
   wizards:firstAppearance "First Book";
   wizard:isAlive "No"; 
