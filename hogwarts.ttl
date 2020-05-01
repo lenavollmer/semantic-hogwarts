@@ -13,24 +13,26 @@
     a uni:EducationalOrganization ;
     uni:name "Hogwarts" ;
     uni:founder <#RowenaRavenclaw> ;
-    # TODO other 3 founders
-    # uni:founder <#rowenaravenclaw> ;
+    uni:founder <#SalazarSlytherin> ;
     # uni:founder <#rowenaravenclaw> ;
     # uni:founder <#rowenaravenclaw> ;
     uni:foundingDate "993" ;
     uni:foundingLocation "UK" ;
     # TODO double check format
     uni:logo "https://vignette.wikia.nocookie.net/harrypotter/images/6/61/Hogwarts-Wappen_2.png/revision/latest/top-crop/width/220/height/220?cb=20131224202326&path-prefix=de" ;
-    uni:subOrganization <#Ravenclaw>;
-    uni:owns <#AlbusDumbledore>;
-    uni:employee <#AlbusDumbledore>;
-    uni:employee <#FiliusFlitwick> . 
+    uni:subOrganization <#Ravenclaw> ;
+    uni:owns <#AlbusDumbledore> ;
+    uni:owns <#DoloresUmbridge> ;
+    uni:employee <#AlbusDumbledore> ;
+    uni:employee <#FiliusFlitwick> ; 
+    uni:employee <#SeverusSnape> ; 
+    uni:employee <#HoraceSlughorn> . 
 
 <#AlbusDumbledore>
     a <wizards#Wizard> ;
     uni:owns <#Hogwarts> ;
     wizards:isInHouse <#Gryffindor> ;
-    wizards:firstAppearance "First Book";
+    wizards:firstAppearance "First Book" ;
     wizard:isAlive "No" .
 
 # Founders
@@ -38,68 +40,304 @@
     a <#wizard> ;
     foaf:name "Rowena Ravenclaw" .
 
+<#SalazarSlytherin>
+    a <#wizard> ;
+    foaf:name "Salazar Slytherin" .
+
 # Houses
 <#Ravenclaw>
-    a <houses#HogwartsHouse>
+    a <houses#HogwartsHouse> ;
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" ;
-    houses:founder <#RowenaRavenclaw>;
-    houses:hasHeadTeacher: <#FiliusFlitwick>.
+    houses:founder <#RowenaRavenclaw> ;
+    houses:hasHeadTeacher: <#FiliusFlitwick> .
+
+<#Slytherin>
+    a <houses#HogwartsHouse> ;
+    houses:hasParentOrganization <#hogwarts> ;
+    houses:slogan "" ;
+    houses:founder <#SalazarSlytherin> ;
+    houses:hasHeadTeacher: <#SeverusSnape> ;
+    houses:hasHeadTeacher: <#HoraceSlughorn> .
 
 <#Hufflepuff>
-    a <houses#HogwartsHouse>
+    a <houses#HogwartsHouse> ;
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" .
 
 <#Slytherin>
-    a <houses#HogwartsHouse>
+    a <houses#HogwartsHouse> ;
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" .
 
 <#Gryffindor>
-    a <houses#HogwartsHouse>
+    a <houses#HogwartsHouse> ;
     houses:hasParentOrganization <#hogwarts> ;
     houses:slogan "" .
 
 # Teachers
+# TODO Foaf:employee does not exist.
 <#FiliusFlitwick>
     a <wizards#Teacher> ;
+    foaf:name "Filius Flitwick" ;
     uni:owns <#Ravenclaw> ;
     wizards:isInHouse <#Ravenclaw> ;
-    wizards:firstAppearance "First Book";
-    wizards:teaches <#HistoryOfMagic>;
+    wizards:firstAppearance "First Book" ;
+    wizards:teaches <#HistoryOfMagic> ;
     wizard:isAlive "Yes" .
-    # TODO Foaf:employee does not exist.
 
-#Courses
+<#SeverusSnape>
+    a <wizards#Teacher> ;
+    foaf:name "Severus Snape" ;
+    uni:owns <#Slytherin> ;
+    wizards:isInHouse <#Slytherin> ;
+    wizards:firstAppearance "First Book" ;
+    wizards:teaches <#Potions> ;
+    wizards:teaches <#DefenceAgainstTheDarkArts> ;
+    wizard:isAlive "No" ;
+    wizard:bloodStatus "Half-blood" .
+    
 
+<#HoraceSlughorn>
+    a <wizards#Teacher> ;
+    foaf:name "Horace Slughorn" ;
+    uni:owns <#Slytherin> ;
+    wizards:isInHouse <#Slytherin> ;
+    wizards:firstAppearance "Sixth Book";
+    wizards:teaches <#Potions>;
+    wizard:isAlive "Yes"  ;
+    wizard:bloodStatus "Unknown" .
+
+<#QuirinusQuirrell>
+    a <wizards#Teacher> ;
+    foaf:name "Quirinus Quirrell" ;
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "First Book";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    wizards:teaches <#MuggleStudies>;
+    wizard:isAlive "No"  ;
+    wizard:bloodStatus "Half-Blood" .
+
+<#GilderoyLockhart>
+    a <wizards#Teacher> ;
+    foaf:name "Gilderoy Lockhart" ;
+    wizards:isInHouse <#Ravenclaw> ;
+    wizards:firstAppearance "Second Book";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    wizard:isAlive "Yes"  ;
+    wizard:bloodStatus "Half-Blood" .
+
+<#RemusLupin>
+    a <wizards#Teacher> ;
+    foaf:name "Remus Lupin" ;
+    wizards:isInHouse <#Gryffindor> ;
+    wizards:firstAppearance "Third Book";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    wizard:isAlive "No"  ;
+    wizard:bloodStatus "Half-Blood" .
+
+<#BartemiusCrouchJr>
+    a <wizards#Teacher> ;
+    foaf:name "Bartemius Crouch" ;
+    wizards:isInHouse "Unknown" ;
+    wizards:firstAppearance "Fourth Book";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    wizard:isAlive "No"  ;
+    wizard:bloodStatus "Unknown" .
+
+<#DoloresUmbridge>
+    a <wizards#Teacher> ;
+    uni:owns <#Hogwarts> ;
+    foaf:name "Dolores Umbridge" ;
+    wizards:isInHouse <#Slytherin> ;
+    wizards:firstAppearance "Fifth Book";
+    wizards:teaches <#DefenceAgainstTheDarkArts>;
+    wizard:isAlive "Yes"  ;
+    wizard:bloodStatus "Half-Blood" .
+
+# Courses
+# Most Students go to most courses so we do not map them
+# Not sure if  class:instructor schema Person is FOAF Person
 <#HistoryOfMagic>
-    a <#CourseInstance>
+    a <#CourseInstance> ;
     houses:hasParentOrganization <#hogwarts> ;
-    houses:slogan "" .
-    class:instructor <#Flitwick> #Not sure if Schema Person is FOAF Person
-    #Most Students go to most courses so we do not map them
+    class:instructor <#FiliusFlitwick> .
 
-#Characters
+<#Potions>
+    a <#CourseInstance> ;
+    houses:hasParentOrganization <#hogwarts> ;
+    class:instructor <#SeverusSnape> ;
+    class:instructor <#HoraceSlughorn> .
 
+<#DefenceAgainstTheDarkArts>
+    a <#CourseInstance> ;
+    houses:hasParentOrganization <#hogwarts> ;
+    class:instructor <#SeverusSnape> ;
+    class:instructor <#QuirinusQuirrell> ;
+    class:instructor <#GilderoyLockhart> ;
+    class:instructor <#RemusLupin> ;
+    class:instructor <#BartemiusCrouchJr> ;
+    class:instructor <#DoloresUmbridge> .
+
+<#MuggleStudies> 
+    a <#CourseInstance> ;
+    houses:hasParentOrganization <#hogwarts> ;
+    class:instructor <#QuirinusQuirrell> .
+
+
+# Students
 <#LunaLovegood>
-  a <wizards#Student>
-  foaf:name "Luna Lovegood";
-  foaf:gender "Female";
-  foaf:knows <#HelenaRavenclaw>
+  a <wizards#Student> ;
+  foaf:name "Luna Lovegood" ;
+  foaf:gender "Female" ;
+  foaf:knows <#HelenaRavenclaw> ;
   wizards:isInHouse <#Ravenclaw> ;
-  wizards:firstAppearance "Fifth Book";
-  wizard:isAlive "Yes"; 
-  wizard:hasFamiliar "Unknown";
-  wizard:bloodStatus "Pure-blood".
+  wizards:firstAppearance "Fifth Book" ;
+  wizard:isAlive "Yes" ; 
+  wizard:hasFamiliar "Unknown" ;
+  wizard:bloodStatus "Pure-blood" .
+  
+<#MarcusFlint>
+    a <wizards#Student> ;
+    foaf:name "Marcus Flint" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#LucianBole> ;
+    foaf:knows <#DracoMalfoy> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Unknown" .
 
+<#LucianBole>
+    a <wizards#Student> ;
+    foaf:name "Lucian Bole" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#MarcusFlint> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Unknown" .
+
+<#DracoMalfoy>
+    a <wizards#Student> ;
+    foaf:name "Draco Malfoy" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#BellatrixLestrange> ;
+    foaf:knows <#LuciusMalfoy> ;
+    foaf:knows <#MarcusFlint> ;
+    foaf:knows <#LucianBole> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#GregoryGoyle> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#VincentCrabbe>
+    a <wizards#Student> ;
+    foaf:name "Vincent Crabbe" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#GregoryGoyle> ;
+    foaf:knows <#PansyParkinson> ;
+    foaf:knows <#MillicentBulstrode> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "No" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#GregoryGoyle>
+    a <wizards#Student> ;
+    foaf:name "Gregory Goyle" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#PansyParkinson> ;
+     foaf:knows <#MillicentBulstrode> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#PansyParkinson>
+    a <wizards#Student> ;
+    foaf:name "Pansy Parkinson" ;
+    foaf:gender "Female" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#DracoMalfoy> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#GregoryGoyle> ;
+     foaf:knows <#MillicentBulstrode> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Unknown" .
+
+<#MillicentBulstrode>
+    a <wizards#Student> ;
+    foaf:name "Millicent Bulstrode" ;
+    foaf:gender "Female" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#VincentCrabbe> ;
+    foaf:knows <#GregoryGoyle> ;
+    foaf:knows <#PansyParkinson> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Half-blood" .
+
+# Other characters
 <HelenaRavenclaw>
- a <wizards#Wizard>
- foaf:name "Helena Ravenclaw";
- foaf:gender "Female";
- foaf:knows <#LunaLovegood>
+ a <wizards#Wizard> ;
+ foaf:name "Helena Ravenclaw" ;
+ foaf:gender "Female" ;
+ foaf:knows <#LunaLovegood> ;
  wizards:isInHouse <#Ravenclaw> ;
- wizards:firstAppearance "Seventh Book";
- wizard:isAlive "No"; 
- wizard:hasFamiliar "Unknown";
- wizard:bloodStatus "Pure-blood".
+ wizards:firstAppearance "Seventh Book" ;
+ wizard:isAlive "No" ; 
+ wizard:hasFamiliar "Unknown" ;
+ wizard:bloodStatus "Pure-blood" .
+
+ <BloodyBaron>
+ a <wizards#Wizard> ;
+ foaf:name "The Bloody Baron" ;
+ foaf:gender "Male" ;
+ wizards:isInHouse <#Slytherin> ;
+ wizards:firstAppearance "First Book" ;
+ wizard:isAlive "No" ; 
+ wizard:hasFamiliar "Unknown" ;
+ wizard:bloodStatus "Unknown" .
+
+<#Voldemort>
+    a <wizards#Wizard> ;
+    foaf:name "Tom Riddle" ;
+    foaf:name "Voldemort"
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#BellatrixLestrange> ;
+    foaf:knows <#LuciusMalfoy> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "No" ; 
+    wizard:hasFamiliar "Snake - Nagini" ;
+    wizard:bloodStatus "Half-blood" .
+
+<#BellatrixLestrange>
+    a <wizards#Wizard> ;
+    foaf:name "Bellatrix Lestrange" ;
+    foaf:gender "Female" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#LuciusMalfoy> ;
+    foaf:knows <#Voldemort> ;
+    wizards:firstAppearance "Fourth Book" ;
+    wizard:isAlive "No" ; 
+    wizard:bloodStatus "Pure-blood" .
+
+<#LuciusMalfoy>
+    a <wizards#Wizard> ;
+    foaf:name "Lucius Malfoy" ;
+    foaf:gender "Male" ;
+    wizards:isInHouse <#Slytherin> ;
+    foaf:knows <#BellatrixLestrange> ;
+    foaf:knows <#Voldemort> ;
+    wizards:firstAppearance "First Book" ;
+    wizard:isAlive "Yes" ; 
+    wizard:bloodStatus "Pure-blood" .
