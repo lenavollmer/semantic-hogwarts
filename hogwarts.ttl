@@ -23,8 +23,6 @@
     uni:subOrganization <#Gryffindor> ;
     uni:subOrganization <#Hufflepuff> ;
     uni:subOrganization <#Slytherin> ;
-    uni:owns <#AlbusDumbledore> ; # TODO doesn't that mean that hogwarts owns Albus, not the other way around?
-    uni:owns <#DoloresUmbridge> ;
     uni:employee <#AlbusDumbledore> ;
     uni:employee <#FiliusFlitwick> ; 
     uni:employee <#SeverusSnape> ; 
