@@ -20,7 +20,9 @@
     uni:foundingLocation "Scotland" ;
     uni:logo "https://bit.ly/2VUFBRb" ;
     uni:subOrganization <#Ravenclaw> ;
-    uni:subOrganization <#Gryffindor>;
+    uni:subOrganization <#Gryffindor> ;
+    uni:subOrganization <#Hufflepuff> ;
+    uni:subOrganization <#Slytherin> ;
     uni:owns <#AlbusDumbledore> ;
     uni:owns <#DoloresUmbridge> ;
     uni:employee <#AlbusDumbledore> ;
