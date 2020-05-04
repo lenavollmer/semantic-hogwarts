@@ -7,7 +7,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:hwhouse="houses.rdf">
-    <Ontology/>
+    <Ontology rdf:about="urn:absolute:uk.hogwarts">
+        <versionIRI rdf:resource="urn:absolute:uk.hogwarts/0.1"/>
+    </Ontology>
     
 
 
@@ -22,61 +24,71 @@
     
 
 
-    <!-- uk.hogwarts/Wizard#bloodStatus -->
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/HogwartsHouse#hasHeadTeacher -->
 
-    <ObjectProperty rdf:about="uk.hogwarts/Wizard#bloodStatus">
-        <rdfs:domain rdf:resource="uk.hogwarts/Wizard"/>
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/HogwartsHouse#hasHeadTeacher">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/HogwartsHouse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Teacher"/>
+        <rdfs:comment>Who is the Headteacher of the house</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#bloodStatus -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#bloodStatus">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>
         <rdfs:comment>Lineage of Wizard</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- uk.hogwarts/Wizard#firstAppearance -->
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#firstAppearance -->
 
-    <ObjectProperty rdf:about="uk.hogwarts/Wizard#firstAppearance">
-        <rdfs:domain rdf:resource="uk.hogwarts/Wizard"/>
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#firstAppearance">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>
         <rdfs:comment>First appearance in the books</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- uk.hogwarts/Wizard#hasFamiliar -->
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#hasFamiliar -->
 
-    <ObjectProperty rdf:about="uk.hogwarts/Wizard#hasFamiliar">
-        <rdfs:domain rdf:resource="uk.hogwarts/Wizard#Student"/>
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#hasFamiliar">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Student"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>
         <rdfs:comment>Pet of the Character</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- uk.hogwarts/Wizard#isAlive -->
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#isAlive -->
 
-    <ObjectProperty rdf:about="uk.hogwarts/Wizard#isAlive">
-        <rdfs:domain rdf:resource="uk.hogwarts/Wizard"/>
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#isAlive">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>
         <rdfs:comment>Status of the character</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- uk.hogwarts/Wizard#isInHouse -->
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#isInHouse -->
 
-    <ObjectProperty rdf:about="uk.hogwarts/Wizard#isInHouse">
-        <rdfs:domain rdf:resource="uk.hogwarts/Wizard#Student"/>
-        <rdfs:domain rdf:resource="uk.hogwarts/Wizard#Teacher"/>
-        <rdfs:range rdf:resource="uk.hogwarts/House#HogwartsHouse"/>
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#isInHouse">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Student"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Teacher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/HogwartsHouse"/>
         <rdfs:comment>House of the character</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- uk.hogwarts/Wizard#teaches -->
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#teaches -->
 
-    <ObjectProperty rdf:about="uk.hogwarts/Wizard#teaches">
-        <rdfs:domain rdf:resource="#Teacher"/>
+    <ObjectProperty rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#teaches">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Teacher"/>
         <rdfs:range rdf:resource="https://schema.org/CourseInstance"/>
         <rdfs:comment>Which classes he teaches</rdfs:comment>
     </ObjectProperty>
@@ -100,6 +112,42 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/HogwartsHouse -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/uk.hogwarts/HogwartsHouse">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Organization"/>
+        <rdfs:comment>Class of Wizard Houses</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>Wizard Class</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#Student -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Student">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard"/>
+        <rdfs:comment>Student Class</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/uk.hogwarts/Wizard#Teacher -->
+
+    <Class rdf:about="http://www.w3.org/2002/07/uk.hogwarts/Wizard#Teacher">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/uk.hogwarts/Wizard"/>
+        <rdfs:comment>Teacher Class</rdfs:comment>
+    </Class>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
@@ -112,49 +160,12 @@
     
 
 
-    <!-- uk.hogwarts/Wizard -->
+    <!-- https://schema.org/Organization -->
 
-    <Class rdf:about="uk.hogwarts/Wizard">
-        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <rdfs:comment>Wizard Class</rdfs:comment>
-    </Class>
-    
-
-
-    <!-- uk.hogwarts/House#HogwartsHouse -->
-
-    <Class rdf:about="uk.hogwarts/House#HogwartsHouse"/>
-    
-
-
-    <!-- uk.hogwarts/Wizard#Student -->
-
-    <Class rdf:about="uk.hogwarts/Wizard#Student">
-        <rdfs:subClassOf rdf:resource="uk.hogwarts/Wizard"/>
-        <rdfs:comment>Student Class</rdfs:comment>
-    </Class>
-    
-
-
-    <!-- uk.hogwarts/Wizard#Teacher -->
-
-    <Class rdf:about="uk.hogwarts/Wizard#Teacher">
-        <rdfs:subClassOf rdf:resource="uk.hogwarts/Wizard"/>
-        <rdfs:comment>Teacher Class</rdfs:comment>
-    </Class>
-
-<rdfs:Class rdf:ID="HogwartsHouse">
-<rdfs:comment>Class of Wizard Houses</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://schema.org/Organization"/>
-</rdfs:Class>
-
-<rdf:Property rdf:ID="hasHeadTeacher">
-    <rdfs:comment>Status of the character</rdfs:comment>
-    <rdfs:domain rdf:resource="#HogwartsHouse"/>
-    <rdfs:range rdf:resource="#Teacher"/>
-</rdf:Property>
-
+    <Class rdf:about="https://schema.org/Organization"/>
 </rdf:RDF>
+
+
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
